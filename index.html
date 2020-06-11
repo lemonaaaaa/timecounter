@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+ 
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ <title></title>
+ <style>
+  div{
+  width: 100%;
+  height: 50px;
+  margin-bottom: 5px;
+  background: yellowgreen;
+  text-align: center;
+  font-size:40px;
+  }
+ </style>
+ </head>
+ 
+ <body>
+  
+ <h1><center>高等数学考试倒计时</center></h1>
+ <br><br><br>
+  <h2><center>准备考试</center></h2>
+  
+ <div id="timer1"></div>
+  <script>
+  var addTimer = function(){
+  var list = [],
+   interval;
+    
+  return function(id,timeStamp){
+   if(!interval){
+   interval = setInterval(go,1);
+   }
+   list.push({ele:document.getElementById(id),time:timeStamp});
+  }
+   
+  function go() { 
+   for (var i = 0; i < list.length; i++) { 
+   list[i].ele.innerHTML = changeTimeStamp(list[i].time); 
+   if (!list[i].time) 
+    list.splice(i--, 1); 
+   } 
+  }
+ 
+  //传入unix时间戳，得到倒计时
+  function changeTimeStamp(timeStamp){
+   var distancetime = new Date(timeStamp*1000).getTime() - new Date().getTime();
+   if(distancetime > 0){ 
+　　　　　　　　　　　　　　//如果大于0.说明尚未到达截止时间  
+   var ms = Math.floor(distancetime%1000);
+   var sec = Math.floor(distancetime/1000%60);
+   var min = Math.floor(distancetime/1000/60%60);
+   var hour =Math.floor(distancetime/1000/60/60%24);
+    
+   if(ms<100){
+    ms = "0"+ ms;
+   }
+   if(sec<10){
+    sec = "0"+ sec;
+   }
+   if(min<10){
+    min = "0"+ min;
+   }
+   if(hour<10){
+    hour = "0"+ hour;
+   }
+    
+   return hour + ":" +min + ":" +sec + ":" +ms;
+   }else{
+　　　　　　　　　　　　　　//若否，就是已经到截止时间了
+   return "已截止！"
+   } 
+  }  
+  }();
+   
+  addTimer("timer1",1591855200);
+ </script>
+ <h2><center>开始考试</center></h2>
+  
+ <div id="timer2"></div>
+  <script>
+  var addTimer = function(){
+  var list = [],
+   interval;
+    
+  return function(id,timeStamp){
+   if(!interval){
+   interval = setInterval(go,1);
+   }
+   list.push({ele:document.getElementById(id),time:timeStamp});
+  }
+   
+  function go() { 
+   for (var i = 0; i < list.length; i++) { 
+   list[i].ele.innerHTML = changeTimeStamp(list[i].time); 
+   if (!list[i].time) 
+    list.splice(i--, 1); 
+   } 
+  }
+ 
+  //传入unix时间戳，得到倒计时
+  function changeTimeStamp(timeStamp){
+   var distancetime = new Date(timeStamp*1000).getTime() - new Date().getTime();
+   if(distancetime > 0){ 
+　　　　　　　　　　　　　　//如果大于0.说明尚未到达截止时间  
+   var ms = Math.floor(distancetime%1000);
+   var sec = Math.floor(distancetime/1000%60);
+   var min = Math.floor(distancetime/1000/60%60);
+   var hour =Math.floor(distancetime/1000/60/60%24);
+    
+   if(ms<100){
+    ms = "0"+ ms;
+   }
+   if(sec<10){
+    sec = "0"+ sec;
+   }
+   if(min<10){
+    min = "0"+ min;
+   }
+   if(hour<10){
+    hour = "0"+ hour;
+   }
+    
+   return hour + ":" +min + ":" +sec + ":" +ms;
+   }else{
+　　　　　　　　　　　　　　//若否，就是已经到截止时间了
+   return "已截止！"
+   } 
+  }  
+  }();
+   
+  addTimer("timer2",1591857000);
+ </script>
+ <h2><center>考试结束</center></h2>
+  
+ <div id="timer3"></div>
+  <script>
+  var addTimer = function(){
+  var list = [],
+   interval;
+    
+  return function(id,timeStamp){
+   if(!interval){
+   interval = setInterval(go,1);
+   }
+   list.push({ele:document.getElementById(id),time:timeStamp});
+  }
+   
+  function go() { 
+   for (var i = 0; i < list.length; i++) { 
+   list[i].ele.innerHTML = changeTimeStamp(list[i].time); 
+   if (!list[i].time) 
+    list.splice(i--, 1); 
+   } 
+  }
+ 
+  //传入unix时间戳，得到倒计时
+  function changeTimeStamp(timeStamp){
+   var distancetime = new Date(timeStamp*1000).getTime() - new Date().getTime();
+   if(distancetime > 0){ 
+　　　　　　　　　　　　　　//如果大于0.说明尚未到达截止时间  
+   var ms = Math.floor(distancetime%1000);
+   var sec = Math.floor(distancetime/1000%60);
+   var min = Math.floor(distancetime/1000/60%60);
+   var hour =Math.floor(distancetime/1000/60/60%24);
+    
+   if(ms<100){
+    ms = "0"+ ms;
+   }
+   if(sec<10){
+    sec = "0"+ sec;
+   }
+   if(min<10){
+    min = "0"+ min;
+   }
+   if(hour<10){
+    hour = "0"+ hour;
+   }
+    
+   return hour + ":" +min + ":" +sec + ":" +ms;
+   }else{
+　　　　　　　　　　　　　　//若否，就是已经到截止时间了
+   return "已截止！"
+   } 
+  }  
+  }();
+   
+  addTimer("timer3",1591864200);
+ </script>
+ <h2><center>提交答卷</center></h2>
+  
+ <div id="timer4"></div>
+  <script>
+  var addTimer = function(){
+  var list = [],
+   interval;
+    
+  return function(id,timeStamp){
+   if(!interval){
+   interval = setInterval(go,1);
+   }
+   list.push({ele:document.getElementById(id),time:timeStamp});
+  }
+   
+  function go() { 
+   for (var i = 0; i < list.length; i++) { 
+   list[i].ele.innerHTML = changeTimeStamp(list[i].time); 
+   if (!list[i].time) 
+    list.splice(i--, 1); 
+   } 
+  }
+ 
+  //传入unix时间戳，得到倒计时
+  function changeTimeStamp(timeStamp){
+   var distancetime = new Date(timeStamp*1000).getTime() - new Date().getTime();
+   if(distancetime > 0){ 
+　　　　　　　　　　　　　　//如果大于0.说明尚未到达截止时间  
+   var ms = Math.floor(distancetime%1000);
+   var sec = Math.floor(distancetime/1000%60);
+   var min = Math.floor(distancetime/1000/60%60);
+   var hour =Math.floor(distancetime/1000/60/60%24);
+    
+   if(ms<100){
+    ms = "0"+ ms;
+   }
+   if(sec<10){
+    sec = "0"+ sec;
+   }
+   if(min<10){
+    min = "0"+ min;
+   }
+   if(hour<10){
+    hour = "0"+ hour;
+   }
+    
+   return hour + ":" +min + ":" +sec + ":" +ms;
+   }else{
+　　　　　　　　　　　　　　//若否，就是已经到截止时间了
+   return "已截止！"
+   } 
+  }  
+  }();
+   
+  addTimer("timer4",1591864800);
+ </script>
+ </body>
+</html>
